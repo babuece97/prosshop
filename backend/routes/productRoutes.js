@@ -2,7 +2,7 @@ import express from 'express'
 import asyncHandler from 'express-async-handler'
 const router = express.Router()
 import Product from '../models/productModel.js'
-// Description fetch all products  
+// Description fetch all products from MONGODATABase
 // route GET /api/products 
 // access Public
 router.get (
