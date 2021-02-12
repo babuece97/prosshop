@@ -1,6 +1,7 @@
 import express from 'express'
 import dotenv from 'dotenv'
 import colors from 'colors'
+import { notFound, errorHandler} from './middleware/errorMiddleware.js'
 import connectDB from  './config/db.js'
 //import {connect } from 'mongoose'
 //import products from './data/products.js'
@@ -17,6 +18,11 @@ app.get('/', (req, res) => {
 })
 
 app.use('/api/products', productRoutes)
+
+// for 404 error which is not accual route 
+app.use(notFound)
+// FOR NOT in production MOOD
+app.use(errorHandler)
 const PORT = process.env.PORT || 5000
 
 app.listen(
