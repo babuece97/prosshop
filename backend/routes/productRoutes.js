@@ -9,6 +9,7 @@ router.get (
   '/', 
 asyncHandler(async (req, res) => {
   const products = await Product.find({})
+  //throw new Error('soME eRRor')
   /*res.status(401)
   throw new Error('nOtT aUthorized')*/
         res.json(products)

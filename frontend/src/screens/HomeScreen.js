@@ -2,7 +2,9 @@ import React, { useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import {Row, Col} from 'react-bootstrap'
 import Product from '../components/Product'
-import { listProducts } from '../action/productActions'
+import Message from '../components/Message'
+import Loader from '../components/Loader'
+import { listProducts } from '../actions/productActions'
 
 
 const HomeScreen = () => {
@@ -19,14 +21,20 @@ const HomeScreen = () => {
 
     return (
         <>
-            <h1>Latest Products</h1>
-            {loading ? <h2>LOADDing!!!wait for a while</h2>:error ? <h3>{error}</h3>:  <Row>
+            <h1>oUR Latest ProducTs</h1>
+            {loading ? (
+                <Loader/>
+                ):error ? (
+                <Message variant ='dANGEr'>{error}</Message>
+                ): (
+                     <Row>
                  {products.map((product) => (
                      <Col key = {product._id} sm= {12} md= {6} lg= {4} xl={3}>
                      <Product product={product}/>
                      </Col>
                  )) }
-            </Row>}
+            </Row>
+            )}
            
             
         </>

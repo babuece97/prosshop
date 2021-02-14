@@ -43,7 +43,7 @@ import {
     }
   }
   
-  /*export const productDetailsReducer = (
+  export const productDetailsReducer = (
     state = { product: { reviews: [] } },
     action
   ) => {

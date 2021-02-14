@@ -47,7 +47,7 @@ export const listProducts = (/*keyword = '', pageNumber = ''*/) => async(dispatc
   }
 }
 
-/*export const listProductDetails = (id) => async (dispatch) => {
+export const listProductDetails = (id) => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_DETAILS_REQUEST })
 
@@ -67,7 +67,7 @@ export const listProducts = (/*keyword = '', pageNumber = ''*/) => async(dispatc
     })
   }
 }
-
+/*
 export const deleteProduct = (id) => async (dispatch, getState) => {
   try {
     dispatch({
