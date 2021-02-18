@@ -10,7 +10,8 @@ import { composeWithDevTools } from 'redux-devtools-extension'
   productReviewCreateReducer,
   productTopRatedReducer,*/
 } from './reducers/productReducers'
-/*import { cartReducer } from './reducers/cartReducers'
+import { cartReducer } from './reducers/cartReducers'
+/*
 import {
   userLoginReducer,
   userRegisterReducer,
@@ -32,6 +33,7 @@ import {
 const reducer = combineReducers({
   productList: productListReducer,
   productDetails: productDetailsReducer,
+  cart: cartReducer,
 
   /*productDetails: productDetailsReducer,
   productDelete: productDeleteReducer,
@@ -55,10 +57,10 @@ const reducer = combineReducers({
   orderList: orderListReducer,*/
 })
 
-/* const cartItemsFromStorage = localStorage.getItem('cartItems')
+ const cartItemsFromStorage = localStorage.getItem('cartItems')
   ? JSON.parse(localStorage.getItem('cartItems'))
   : []
-
+/*
 const userInfoFromStorage = localStorage.getItem('userInfo')
   ? JSON.parse(localStorage.getItem('userInfo'))
   : null
@@ -68,9 +70,9 @@ const shippingAddressFromStorage = localStorage.getItem('shippingAddress')
   : {} */
 
 const initialState = {
-  /*cart: {
-    cartItems: cartItemsFromStorage,
-    shippingAddress: shippingAddressFromStorage,*/
+  cart: {
+    cartItems: cartItemsFromStorage },
+    //shippingAddress: shippingAddressFromStorage,*/
   }
   /*userLogin: { userInfo: userInfoFromStorage },
 }*/
