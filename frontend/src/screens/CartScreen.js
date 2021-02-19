@@ -27,15 +27,16 @@ const CartScreen = ({ match, location, history }) => {
 
   const checkoutHandler = () => {
     history.push('/login?redirect=shipping')
+    //if not login ,then go for login N if login then go shipping
   }
 
   return (
     <Row>
       <Col md={8}>
-        <h1>Shopping Cart</h1>
+        <h1>Shopping CaArt</h1>
         {cartItems.length === 0 ? (
           <Message>
-            sORRY !!!Your cart is empty <Link to='/'>Go bAck</Link>
+            sORRY !!!Your cart is eMpty <Link to='/'>Go bAck</Link>
           </Message>
         ) : (
           <ListGroup variant='flush'>
@@ -46,13 +47,13 @@ const CartScreen = ({ match, location, history }) => {
                     <Image src={item.image} alt={item.name} fluid rounded />
                   </Col>
                   <Col md={3}>
-                    <Link to={`/product/${item.product}`}>{item.name}</Link>
+                    <Link to={`/product/dkk{item.product}`}>{item.name}</Link>
                   </Col>
-                  <Col md={2}>${item.price}</Col>
+                  <Col md={2}>dkk{item.price}</Col>
                   <Col md={2}>
                     <Form.Control
                       as='select'
-                      value={item.qty}
+                      value={item.qty}////
                       onChange={(e) =>
                         dispatch(
                           addToCart(item.product, Number(e.target.value))
@@ -86,10 +87,10 @@ const CartScreen = ({ match, location, history }) => {
           <ListGroup variant='flush'>
             <ListGroup.Item>
               <h2>
-                Subtotal ({cartItems.reduce((acc, item) => acc + item.qty, 0)})
+                SuBTotal ({cartItems.reduce((acc, item) => acc + item.qty, 0)})
                 items
               </h2>
-              $
+              DKK  
               {cartItems
                 .reduce((acc, item) => acc + item.qty * item.price, 0)
                 .toFixed(2)}
@@ -101,7 +102,7 @@ const CartScreen = ({ match, location, history }) => {
                 disabled={cartItems.length === 0}
                 onClick={checkoutHandler}
               >
-                Proceed tOO Checkout
+                Proceed tOO cHeckout
               </Button>
             </ListGroup.Item>
           </ListGroup>
